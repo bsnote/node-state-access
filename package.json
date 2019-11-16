@@ -1,0 +1,48 @@
+{
+  "name": "state-access",
+  "version": "0.0.2",
+  "description": "Access to application state stored in git repo or locally",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "npm run build-ts && npm run tslint",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prepare": "npm run build-ts",
+    "prepublishOnly": "npm run tslint",
+    "preversion": "npm run tslint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bsnote/node-state-access.git"
+  },
+  "keywords": [
+    "state",
+    "access"
+  ],
+  "author": "Andrei Sedoi <andrei.sedoi@bk.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bsnote/node-state-access/issues"
+  },
+  "homepage": "https://github.com/bsnote/node-state-access",
+  "devDependencies": {
+    "@types/node": "^12.12.12",
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.3",
+    "isomorphic-git": "^0.70.7"
+  }
+}
