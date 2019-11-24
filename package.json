@@ -1,6 +1,6 @@
 {
   "name": "state-access",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Access to application state stored in git repo or locally",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
